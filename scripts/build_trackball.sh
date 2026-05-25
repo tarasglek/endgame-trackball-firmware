@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")/zmk" || exit 1
+cd "$(dirname "$0")/../zmk" || exit 1
 
 EXTRA_MODULES=""
 

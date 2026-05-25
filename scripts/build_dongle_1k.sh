@@ -1,5 +1,5 @@
 #!/bin/sh
-cd "$(dirname "$0")/zmk" || exit 1
+cd "$(dirname "$0")/../zmk" || exit 1
 
 BOARD=efogtech_dongle_1k
 for arg in "$@"; do

@@ -15,9 +15,9 @@ fi
 west zephyr-export
 
 if [ -f "build_trackball_local.sh" ]; then
-    bash $WORKSPACE/build_trackball_local.sh
+    bash $WORKSPACE/scripts/build_trackball_local.sh
 else
-    bash $WORKSPACE/build_trackball.sh
+    bash $WORKSPACE/scripts/build_trackball.sh
 fi
 
 FIRMWARE="$ZMK_DIR/build/zephyr/zmk.uf2"
