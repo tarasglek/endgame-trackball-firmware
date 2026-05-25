@@ -1,12 +1,11 @@
-#!/bin/bash
-set -euo pipefail
+#!/usr/bin/env bash
 
-WORKSPACE=/workspace
-ZMK_DIR="$WORKSPACE/zmk"
+cd "$(dirname "$0")/../zmk" || exit 1
 
 EXTRA_MODULES=""
+
 add_module() {
-    local dir="$WORKSPACE/$1"
+    local dir="$(pwd)/../$1"
     if [ -d "$dir" ]; then
         EXTRA_MODULES="${EXTRA_MODULES:+${EXTRA_MODULES};}${dir}"
     else
@@ -22,13 +21,12 @@ add_module "zmk-axis-clamper"
 add_module "zmk-report-rate-limit"
 add_module "zmk-ec11-ish-driver"
 add_module "zmk-auto-hold"
-add_module "zmk-adaptive-feedback"
 add_module "zmk-behavior-follower"
 add_module "zmk-keymap-shell"
 add_module "zmk-acceleration-curves"
 add_module "zmk-rotate-plane"
-add_module "zmk-input-processor-rotate-plane"
 add_module "zmk-runtime-config"
+add_module "zmk-adaptive-feedback"
 add_module "zmk-bistable-behavior"
 add_module "zmk-ble-shell"
 add_module "zmk-esb-endpoint"
@@ -37,22 +35,6 @@ add_module "zmk-feedback-common"
 echo "Building ZMK firmware for Endgame Trackball..."
 echo "Extra modules: $EXTRA_MODULES"
 echo ""
-
-cd "$ZMK_DIR"
-
-echo "--------------"
-echo $(pwd)
-echo "--------------"
-echo ""
-
-cd /workspace/zmk
-
-if [ ! -d ".west" ]; then
-    echo "Initializing west workspace..."
-    west init -l app && west update
-fi
-
-west zephyr-export
 
 west build \
     --pristine always \
@@ -63,15 +45,4 @@ west build \
     -- \
     -DZMK_EXTRA_MODULES="${EXTRA_MODULES}" \
     -DCONFIG_ZMK_STUDIO=y \
-    -DZMK_CONFIG="${WORKSPACE}/endgame-trackball-config/config"
-
-FIRMWARE="$ZMK_DIR/build/zephyr/zmk.uf2"
-
-echo ""
-echo "Build successful!"
-echo "Firmware: $FIRMWARE"
-
-if [ -d "/output" ]; then
-    cp "$FIRMWARE" /output/zmk.uf2
-    echo "Firmware copied to /output/zmk.uf2"
-fi
+    -DZMK_CONFIG="$(pwd)/../endgame-trackball-config/config"

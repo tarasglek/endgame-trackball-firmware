@@ -3,4 +3,5 @@
 *.zip
 *.hex
 *.jlink
+scripts/build_trackball_local.sh
 output
