@@ -28,7 +28,7 @@ First time:
 ```sh
 git submodule update --init --recursive
 mkdir -p output
-docker build -t endgame-firmware
+docker build -t endgame-firmware .
 ```
 
 Building:
@@ -36,6 +36,10 @@ Building:
 ```sh
 docker run --rm -v "$(pwd):/workspace" -v "$(pwd)/output:/output" endgame-firmware
 ```
+
+You can customize the building process by copying `build_trackball.sh` to `build_trackball_local.sh` and tweak that as needed.
+
+If you ever need to re-run `west init -l app && west update`, just run `rm -rf zmk/.west` then re-build docker with `docker build -t endgame-firmware .`
 
 #### GitHub Actions
 Fork the `endgame-trackball-config` repository. Any commit will trigger an action that will build the firmware for you.
