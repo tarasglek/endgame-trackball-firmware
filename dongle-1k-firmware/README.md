@@ -61,4 +61,5 @@ Storage partition backup and restore are not available in this mode yet.
 
 1. Hold the dongle button for 5 seconds to remove the existing bond.
 2. Execute `esb unpair` with MUI on the trackball side to forget the dongle.
-3. The dongle has priority over USB. Switch to another slot to use USB.
+3. DTS and Kconfig are in the [config repo](https://github.com/efogtech/endgame-trackball-config).
+4. The dongle has priority over USB. Switch to another slot to use USB.
