@@ -300,11 +300,14 @@ static void confirm_speculative_if_any(void) {
     }
     /* Non-IDLE RX on the new channel — the hop was correct. */
     k_work_cancel_delayable(&m_validate_work);
-    quarantine_add(&m_quarantine, m_speculative_prev,
-                   CONFIG_DONGLE_CHANNEL_QUARANTINE_MS);
-    LOG_INF("validated speculative hop on %u, quarantined %u for %u ms",
-            esb_prx_get_channel(), m_speculative_prev,
-            (unsigned)CONFIG_DONGLE_CHANNEL_QUARANTINE_MS);
+    /* Never quarantine the DTS-default channel — it is the rollback / peek
+     * rendezvous and must stay pickable. */
+    if (m_speculative_prev != CONFIG_DONGLE_ESB_RF_CHANNEL) {
+        quarantine_add(&m_quarantine, m_speculative_prev, CONFIG_DONGLE_CHANNEL_QUARANTINE_MS);
+        LOG_INF("validated speculative hop on %u, quarantined %u for %u ms", esb_prx_get_channel(), m_speculative_prev, (unsigned)CONFIG_DONGLE_CHANNEL_QUARANTINE_MS);
+    } else {
+        LOG_INF("validated speculative hop on %u, left default %u (not quarantined)", esb_prx_get_channel(), m_speculative_prev);
+    }
     m_speculative_prev = CHANNEL_HOP_INVALID;
     m_speculative_target = CHANNEL_HOP_INVALID;
     m_spec_cooldown_until = k_uptime_get_32() +
@@ -937,11 +940,14 @@ static void confirm_coop_hop_if_any(void) {
         return;
     }
     k_work_cancel_delayable(&m_coop_hop_validate_work);
-    quarantine_add(&m_quarantine, m_coop_hop_revert_to,
-                   CONFIG_DONGLE_COOP_HOP_QUARANTINE_MS);
-    LOG_INF("coop hop validated on %u, quarantined %u for %u ms",
-            esb_prx_get_channel(), m_coop_hop_revert_to,
-            (unsigned)CONFIG_DONGLE_COOP_HOP_QUARANTINE_MS);
+    /* Never quarantine the DTS-default channel — it is the rollback / peek
+     * rendezvous and must stay pickable. */
+    if (m_coop_hop_revert_to != CONFIG_DONGLE_ESB_RF_CHANNEL) {
+        quarantine_add(&m_quarantine, m_coop_hop_revert_to, CONFIG_DONGLE_COOP_HOP_QUARANTINE_MS);
+        LOG_INF("coop hop validated on %u, quarantined %u for %u ms", esb_prx_get_channel(), m_coop_hop_revert_to, (unsigned)CONFIG_DONGLE_COOP_HOP_QUARANTINE_MS);
+    } else {
+        LOG_INF("coop hop validated on %u, left default %u (not quarantined)", esb_prx_get_channel(), m_coop_hop_revert_to);
+    }
     m_coop_hop_revert_to = CHANNEL_HOP_INVALID;
 }
 

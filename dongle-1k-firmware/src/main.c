@@ -254,6 +254,10 @@ static void on_esb_rx(const uint8_t pipe, const uint8_t *data, const uint8_t len
             return;
         }
 
+        if (len < (uint8_t)(2 + report_len)) {
+            break;
+        }
+
         if (pkt->report_type == ESB_REPORT_KEYBOARD) {
             LOG_DBG("RX KB: mod=%02X k=%02X %02X %02X %02X %02X %02X",
                     pkt->data[0], pkt->data[2], pkt->data[3], pkt->data[4],
