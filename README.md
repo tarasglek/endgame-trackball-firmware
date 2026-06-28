@@ -30,6 +30,19 @@ Generated layout docs are committed under `docs/generated/`.
 
 ![Generated Endgame Trackball keymap](docs/generated/efogtech_trackball_0.svg)
 
+#### Layer guide
+
+| Layer | How to reach it | Purpose / non-obvious bindings |
+|-------|-----------------|--------------------------------|
+| Default | Normal layer | Main button map. `&mkp` entries are mouse clicks: `LCLK`, `MCLK`, `RCLK`, `MB4`, `MB5`. Encoders handle volume and Ctrl+Tab / Ctrl+Shift+Tab. |
+| Extras | Hold bottom-left button (`MB4` on tap) | Clipboard helpers: copy, paste, cut, undo. |
+| Device | Hold bottom-right button (`MB5` on tap) | Bluetooth/profile controls, adaptive feedback toggle, bistable toggle, and ZMK Studio unlock. |
+| Scroll | Hold top-right button (`Esc` on tap), or hold the click/double-click/hold button | Trackball becomes scroll input. Buttons adjust pointer/scroll sensitivity and report-rate limit. |
+| Snipe | Hold top-left button (`Enter` on tap) | Slower precision pointer mode. Encoder directions become left/right arrows. |
+| User | Not bound from Default | Spare layer for local customization. |
+
+ZMK shorthand used above: `&ltmkp LAYER KEY` = hold layer / tap keyboard key; `&ltm LAYER BTN` = hold layer / tap mouse button; `&cdch LAYER 0` = hold layer, tap copy, double-tap paste; `&trans` = fall through to the lower layer; `&sens`, `&scrlsens`, and `&rrl` tune pointer/scroll/report-rate behavior.
+
 #### Locally, via Docker
 
 First time:
