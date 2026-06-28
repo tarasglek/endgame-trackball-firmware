@@ -21,6 +21,15 @@ west build --pristine always -s app -b efogtech_trackball_0 -S studio-rpc-usb-ua
 
 Look for `build/zephyr/zmk.uf2` — it's your firmware.
 
+### Keymap Visualization
+
+Generated layout docs are committed under `docs/generated/`.
+
+- Regenerate YAML + SVG: `make keymap-svg`
+- Canonical rendered keymap: [`docs/generated/efogtech_trackball_0.svg`](docs/generated/efogtech_trackball_0.svg)
+
+![Generated Endgame Trackball keymap](docs/generated/efogtech_trackball_0.svg)
+
 #### Locally, via Docker
 
 First time:
