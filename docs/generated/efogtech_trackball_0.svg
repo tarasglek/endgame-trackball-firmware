@@ -270,7 +270,7 @@ path.combo {
 <g transform="translate(202, 42)" class="key keypos-0">
 <rect rx="6" ry="6" x="-54" y="-40" width="108" height="80" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Output</tspan><tspan x="0" dy="1.2em">next</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 64%">Bluetooth</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">config</tspan><tspan x="0" dy="1.2em" style="font-size: 64%">advertising</tspan>
 </text>
 </g>
 <g transform="translate(342, 42)" class="key keypos-1">
@@ -282,7 +282,7 @@ path.combo {
 <g transform="translate(76, 119)" class="key keypos-2">
 <rect rx="6" ry="6" x="-40" y="-103" width="80" height="206" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 88%">Bistable</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">toggle</tspan>
+<tspan x="0" dy="-1.2em" style="font-size: 88%">OS</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">shortcut</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">mode</tspan>
 </text>
 </g>
 <g transform="translate(468, 119)" class="key keypos-3">
@@ -294,7 +294,7 @@ path.combo {
 <g transform="translate(76, 357)" class="key keypos-4">
 <rect rx="6" ry="6" x="-40" y="-103" width="80" height="206" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em" style="font-size: 88%">Feedback</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">toggle</tspan>
+<tspan x="0" dy="-0.6em" style="font-size: 88%">Feedback</tspan><tspan x="0" dy="1.2em" style="font-size: 88%">on/off</tspan>
 </text>
 </g>
 <g transform="translate(468, 357)" class="key keypos-5">
@@ -418,7 +418,7 @@ path.combo {
 <g transform="translate(342, 42)" class="key keypos-1">
 <rect rx="6" ry="6" x="-54" y="-40" width="108" height="80" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Soft</tspan><tspan x="0" dy="1.2em">off</tspan>
+<tspan x="0" dy="-0.6em">Power</tspan><tspan x="0" dy="1.2em">off</tspan>
 </text>
 </g>
 <g transform="translate(76, 119)" class="key trans keypos-2">

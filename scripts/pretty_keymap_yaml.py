@@ -43,11 +43,11 @@ EXACT_LABELS: dict[str, Any] = {
     "&bst_paste": "Paste",
     "&bst_cut": "Cut",
     "&bst_undo": "Undo",
-    "&zbs_adv": "Output next",
-    "&bst_tog ZBS_TOG": "Bistable toggle",
-    "&af_toggle AF_TOG": "Feedback toggle",
+    "&zbs_adv": "Bluetooth config advertising",
+    "&bst_tog ZBS_TOG": "OS shortcut mode",
+    "&af_toggle AF_TOG": "Feedback on/off",
     "&studio_unlock": "Studio unlock",
-    "&soft_off": "Soft off",
+    "&soft_off": "Power off",
     "&rrl 1": "Report rate",
 }
 

@@ -30,18 +30,28 @@ Generated layout docs are committed under `docs/generated/`.
 
 ![Generated Endgame Trackball keymap](docs/generated/efogtech_trackball_0.svg)
 
-#### Layer guide
+#### Layer access
 
-| Layer | How to reach it | Purpose / non-obvious bindings |
-|-------|-----------------|--------------------------------|
-| Default | Normal layer | Main button map. `&mkp` entries are mouse clicks: `LCLK`, `MCLK`, `RCLK`, `MB4`, `MB5`. Encoders handle volume and Ctrl+Tab / Ctrl+Shift+Tab. |
-| Extras | Hold bottom-left button (`MB4` on tap) | Clipboard helpers: copy, paste, cut, undo. |
-| Device | Hold bottom-right button (`MB5` on tap) | Bluetooth/profile controls, adaptive feedback toggle, bistable toggle, and ZMK Studio unlock. |
-| Scroll | Hold top-right button (`Esc` on tap), or hold the click/double-click/hold button | Trackball becomes scroll input. Buttons adjust pointer/scroll sensitivity and report-rate limit. |
-| Snipe | Hold top-left button (`Enter` on tap) | Slower precision pointer mode. Encoder directions become left/right arrows. |
-| User | Not bound from Default | Spare layer for local customization. |
+Layer holds are shown in the SVG as `tap / hold` labels.
 
-ZMK shorthand used above: `&ltmkp LAYER KEY` = hold layer / tap keyboard key; `&ltm LAYER BTN` = hold layer / tap mouse button; `&cdch LAYER 0` = hold layer, tap copy, double-tap paste; `&trans` = fall through to the lower layer; `&sens`, `&scrlsens`, and `&rrl` tune pointer/scroll/report-rate behavior.
+- Hold `Enter` -> **Snipe**: slower precision pointer mode.
+- Hold `Esc` -> **Scroll**: trackball scroll mode.
+- Hold `Mouse 4` -> **Extras**: clipboard actions.
+- Hold `Mouse 5` -> **Device**: Bluetooth/device controls.
+- Hold `Copy/Paste` -> **Scroll**. Tap copies; double-tap pastes.
+- **User** is reserved for local customization.
+
+#### Unusual controls
+
+- **OS shortcut mode**: switches clipboard actions between Windows/Linux shortcuts and macOS shortcuts.
+- **Bluetooth config advertising**: advertises the device management/config interface over Bluetooth.
+- **Feedback on/off**: enables or disables the device feedback system.
+- **Feedback cues**: LED/haptic pulses mark status events such as Device/Snipe layer entry, OS shortcut mode changes, keymap slot changes, low/critical battery, and sensitivity/report-rate adjustments.
+- **Report rate**: changes how often pointer movement is sent; lower can be more stable/power-friendly, higher can feel more responsive.
+- **Pointer sensitivity**: adjusts cursor speed.
+- **Scroll sensitivity**: adjusts scroll speed while in Scroll.
+- **Studio unlock**: enables ZMK Studio access.
+- **Power off**: shuts the device down until wake/reset.
 
 #### Locally, via Docker
 

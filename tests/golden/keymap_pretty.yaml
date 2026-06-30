@@ -15,6 +15,11 @@ layers:
     h: Extras
   - t: Mouse 5
     h: Device
+  Device:
+  - Bluetooth config advertising
+  - OS shortcut mode
+  - Feedback on/off
+  - Power off
   Scroll:
   - Pointer -sens
   - Pointer +sens
