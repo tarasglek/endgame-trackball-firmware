@@ -1,0 +1,25 @@
+layout:
+  zmk_keyboard: efogtech_trackball_0
+layers:
+  Default:
+  - t: ENTER
+    h: Snipe
+  - t: ESC
+    h: Scroll
+  - Middle Click
+  - t: Copy/Paste
+    h: Scroll
+  - Left Click
+  - Right Click
+  - t: Mouse 4
+    h: Extras
+  - t: Mouse 5
+    h: Device
+  Scroll:
+  - Pointer -sens
+  - Pointer +sens
+  - Scroll -sens
+  - Scroll +sens
+  - Report rate
+  - t: ▽
+    type: trans

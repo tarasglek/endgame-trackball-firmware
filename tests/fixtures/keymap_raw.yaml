@@ -1,0 +1,10 @@
+layout: {zmk_keyboard: efogtech_trackball_0}
+layers:
+  Default: ['&ltmkp 4 ENTER', '&ltmkp 3 ESC', '&mkp MCLK', '&cdch 3 0', '&mkp LCLK', '&mkp RCLK', '&ltm 1 MB4', '&ltm 2 MB5']
+  Scroll:
+  - '&sens P2SM_DEC 1'
+  - '&sens P2SM_INC 1'
+  - '&scrlsens P2SM_DEC 1'
+  - '&scrlsens P2SM_INC 1'
+  - '&rrl 1'
+  - '&trans'

@@ -1,67 +1,105 @@
-layout: {zmk_keyboard: efogtech_trackball_0}
+layout:
+  zmk_keyboard: efogtech_trackball_0
 layers:
-  Default: ['&ltmkp 4 ENTER', '&ltmkp 3 ESC', '&mkp MCLK', '&cdch 3 0', '&mkp LCLK', '&mkp RCLK', '&ltm 1 MB4', '&ltm 2 MB5', VOL UP, Ctl+TAB, VOL DN, Ctl+Sft+TAB]
+  Default:
+  - t: ENTER
+    h: Snipe
+  - t: ESC
+    h: Scroll
+  - Middle Click
+  - t: Copy/Paste
+    h: Scroll
+  - Left Click
+  - Right Click
+  - t: Mouse 4
+    h: Extras
+  - t: Mouse 5
+    h: Device
+  - VOL UP
+  - Ctl+TAB
+  - VOL DN
+  - Ctl+Sft+TAB
   Extras:
-  - '&bst_copy'
-  - '&bst_paste'
-  - '&bst_cut'
-  - '&bst_undo'
-  - '&bst_undo'
-  - '&bst_copy'
-  - {t: ▽, type: trans}
-  - '&bst_paste'
+  - Copy
+  - Paste
+  - Cut
+  - Undo
+  - Undo
+  - Copy
+  - t: ▽
+    type: trans
+  - Paste
   - VOL UP
   - Ctl+TAB
   - VOL DN
   - Ctl+Sft+TAB
   Device:
-  - '&zbs_adv'
+  - Output next
   - BT CLR
-  - '&bst_tog ZBS_TOG'
+  - Bistable toggle
   - BT NXT
-  - '&af_toggle AF_TOG'
+  - Feedback toggle
   - BT PRV
-  - '&studio_unlock'
-  - {t: ▽, type: trans}
+  - Studio unlock
+  - t: ▽
+    type: trans
   - VOL UP
   - Ctl+TAB
   - VOL DN
   - Ctl+Sft+TAB
   Scroll:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&scrlsens P2SM_INC 1'
-  - '&rrl 1'
-  - '&scrlsens P2SM_DEC 1'
-  - '&sens P2SM_DEC 1'
-  - '&sens P2SM_INC 1'
-  - '&sens P2SM_DEC 1'
-  - '&scrlsens P2SM_INC 1'
-  - '&sens P2SM_INC 1'
-  - '&scrlsens P2SM_DEC 1'
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - Scroll +sens
+  - Report rate
+  - Scroll -sens
+  - Pointer -sens
+  - Pointer +sens
+  - Pointer -sens
+  - Scroll +sens
+  - Pointer +sens
+  - Scroll -sens
   Snipe:
-  - {t: ▽, type: trans}
-  - '&soft_off'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - t: ▽
+    type: trans
+  - Soft off
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
   - LEFT
   - RIGHT
   - RIGHT
   - LEFT
   User:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
   - VOL UP
   - Ctl+TAB
   - VOL DN
